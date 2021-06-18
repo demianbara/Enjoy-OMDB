@@ -22,7 +22,7 @@
     "server": "nodemon api/server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
-    "seed": "node api/seed"
+    "seed": "node api/db/seed"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
