@@ -1,0 +1,77 @@
+.movieContent {
+    align-self: center;
+    background-color: #1780A1;
+    width: 100%;
+}
+
+.mvSearch {
+    display: flex;
+    flex-direction: column;
+    background-color: #0091AD;
+    border-radius: 5px;
+}
+
+.mvFound {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.search {
+    padding-bottom: 0;
+}
+
+.searchButton {
+    width: 20%;
+    margin: 0;
+}
+
+.linkmovie {
+    align-self: center;
+    width: 51%;
+    text-decoration: none;
+}
+
+.mvUnique {
+    padding: 5px;
+}
+
+.cardStyle {
+    width: 18rem;
+    height: 40px;
+}
+
+
+input {
+    width: 80%;
+    height: 45px;
+    border-style:solid;
+    margin-bottom: 0;
+    background-color: #455E89;
+}
+
+input:hover {
+    border-style:solid;
+    border-color: #B7094C;
+}
+
+input:focus {
+    border: 4px solid #723C70;
+    outline: none;
+}
+
+label {
+    align-self: center;
+}
+
+h4 {
+    color: rgb(17, 17, 61);
+}
+
+h4:hover {
+    color: #455E89;
+    font-weight: bolder;
+}
+
+
+

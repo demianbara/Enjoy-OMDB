@@ -1,20 +1,18 @@
 import * as React from 'react';
+import NavButtons from '../../components/Buttons/navButtons';
+import UserButtons from '../../components/Buttons/userButtons';
+
 import "./style.module.css";
 
 export default function Header () {
 
-
     return (
         <header>
+            <NavButtons /> 
             <div>
-                <button>HOME</button>
-                <button>USERS</button>
-                <button>MOVIES</button>
+                <h1></h1>
             </div>
-            <div>
-                <h1>HOLA</h1>
-            </div>
-                <button>LOGIN</button>
+            <UserButtons />
         </header>
     );
 }
