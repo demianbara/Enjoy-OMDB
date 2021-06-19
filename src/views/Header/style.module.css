@@ -1,0 +1,12 @@
+
+header {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: groove round;
+    background-color: rgb(137, 107, 151)
+}
+
+button {
+    margin: 20px 40px 20px 20px;
+}

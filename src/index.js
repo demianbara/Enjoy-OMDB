@@ -1,10 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import { render } from "react-dom";
+
+import App from './views/App'
 import "./index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <h1>Open Movie Data Base</h1>
-  </React.StrictMode>,
-  document.getElementById("root")
+
+const target = document.getElementById("root");
+
+const app = (
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );
+
+render(app,target);
