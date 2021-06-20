@@ -1,16 +1,19 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import "./style.module.css";
+import s from "./style.module.css";
 
 export default function NavButtons() {
     return (
         <div>
             <Link to="/">
-                <button>HOME</button>
+                <button className={s.buttonStyle}>HOME</button>
             </Link>
-            <button>USERS</button>
+            <button className={s.buttonStyle}>USERS</button>
             <Link to="/movies">
-                <button>MOVIES</button>
+                <button className={s.buttonStyle}>MOVIES</button>
+            </Link>
+            <Link to="/favs">
+                <button className={s.buttonStyle}>FAVS</button>
             </Link>
         </div>
     );

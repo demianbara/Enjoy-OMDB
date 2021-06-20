@@ -6,9 +6,3 @@ header {
     border-bottom: groove round;
     background-color: #0091AD
 }
-
-button {
-    margin: 20px 40px 20px 20px;
-    border-radius: 10px;
-    padding: 10px;
-}

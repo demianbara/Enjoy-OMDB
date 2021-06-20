@@ -2,7 +2,7 @@ import * as React from 'react';
 import NavButtons from '../../components/Buttons/navButtons';
 import UserButtons from '../../components/Buttons/userButtons';
 
-import "./style.module.css";
+import s from "./style.module.css";
 
 export default function Header () {
 

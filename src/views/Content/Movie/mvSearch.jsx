@@ -21,10 +21,16 @@ export default function MvSearch() {
 
     return (
         <div className={s.mvSearch}>
-            <label htmlFor="">SEARCH HERE YOUR FAVORITE MOVIE</label>
+            <label className={s.searchLabel} htmlFor="">
+                SEARCH HERE YOUR FAVORITE MOVIE
+            </label>
             <div className={s.search}>
-                <input onChange={handleChange} type="text" />
-                <Link to='/movies'>
+                <input
+                    className={s.searchInput}
+                    onChange={handleChange}
+                    type="text"
+                />
+                <Link to="/movies">
                     <button className={s.searchButton} onClick={handleClick}>
                         SEARCH
                     </button>

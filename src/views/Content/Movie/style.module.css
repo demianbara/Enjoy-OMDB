@@ -24,22 +24,23 @@
 .searchButton {
     width: 20%;
     margin: 0;
+    background-color: #B7094C;
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.linkmovie {
+/* .linkmovie {
     align-self: center;
     width: 51%;
     text-decoration: none;
-}
+} */
 
 .mvUnique {
     padding: 5px;
 }
 
 
-
-
-input {
+.searchInput {
     width: 80%;
     height: 45px;
     border-style:solid;
@@ -47,25 +48,25 @@ input {
     background-color: #455E89;
 }
 
-input:hover {
+.searchInput:hover {
     border-style:solid;
     border-color: #B7094C;
 }
 
-input:focus {
+.searchInput:focus {
     border: 4px solid #723C70;
     outline: none;
 }
 
-label {
+.searchLabel {
     align-self: center;
 }
 
-h4 {
+.plotMovie {
     color: rgb(17, 17, 61);
 }
 
-h4:hover {
+.plotMovie:hover {
     color: #455E89;
     font-weight: bolder;
 }

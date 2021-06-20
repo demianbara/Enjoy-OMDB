@@ -6,19 +6,21 @@ export default function MvUnique () {
     const { movieSelected } = useSelector(store => store.movies);
     console.log(movieSelected)
     return (
-        <div className={s.mvUnique}>
+        <div classNameName={s.mvUnique}>
             <h1>{movieSelected.Title}</h1>
             <img src={movieSelected.Poster} alt="" />
+            <h4 className={s.plotMovie}>{movieSelected.Plot}</h4>
         </div>
-        // <div className="card cardStyle">
-        //     <img className="card-img-top" src={movieSelected.Poster} alt="" />
-        //     <div className="card-body">
-        //         <h5 className="card-title">{movieSelected.Title}</h5>
-        //         <p className="card-text">{movieSelected.Plot}</p>
-        //         <a href="#" className="btn btn-primary">
+        // <div classNameName="card cardStyle">
+        //     <img classNameName="card-img-top" src={movieSelected.Poster} alt="" />
+        //     <div classNameName="card-body">
+        //         <h5 classNameName="card-title">{movieSelected.Title}</h5>
+        //         <p classNameName="card-text">{movieSelected.Plot}</p>
+        //         <a href="#" classNameName="btn btn-primary">
         //             Go somewhere
         //         </a>
         //     </div>
         // </div>
+       
     );
 }
