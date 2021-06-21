@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { User } = require('../../db/models')
 
 router.use('/auth', require('./auth'))
 router.use('/users', require('./users'))

@@ -1,20 +1,26 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
-// axios.defaults.baseURL = "http://localhost:3001";
-// axios.defaults.headers.common["Authorization"] = '21345';
-// axios.defaults.headers.post["Content-Type"] =
-//     "application/x-www-form-urlencoded";
 
-const initialState = {};
+const initialState = {
+    userCreated : false,
+    isLogin: false,
+    userLogin: {}
+};
+
 
 export const register = createAsyncThunk("REGISTER", (body, thunkAPI) => {
     return axios
         .post("/api/auth/register", body)
-        .then((user) => user.data);
+        .then((user) => user.data)
+});
+
+export const login = createAsyncThunk("LOGIN", (body, thunkAPI) => {
+    return axios.post("/api/auth/login", body).then((user) => user.data);
 });
 
 const userAuthReducer = createReducer(initialState, {
-    [register.fulfilled] : (state, action) => action.payload
+    [register.fulfilled] : (state, action) => {state.userCreated = true},
+    [login.fulfilled] : (state, action) => {state.isLogin = true}
 })
 
 

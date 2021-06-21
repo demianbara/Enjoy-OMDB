@@ -4,6 +4,7 @@ import { setFavMovie } from "../../store/favs";
 
 export default function Favorite({ movie }) {
     const dispatch = useDispatch()
+    console.log(movie)
 
     return (
        <div>

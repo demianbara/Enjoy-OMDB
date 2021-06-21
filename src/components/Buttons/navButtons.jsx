@@ -8,7 +8,9 @@ export default function NavButtons() {
             <Link to="/">
                 <button className={s.buttonStyle}>HOME</button>
             </Link>
-            <button className={s.buttonStyle}>USERS</button>
+            <Link to="/users">
+                <button className={s.buttonStyle}>USERS</button>
+            </Link>
             <Link to="/movies">
                 <button className={s.buttonStyle}>MOVIES</button>
             </Link>

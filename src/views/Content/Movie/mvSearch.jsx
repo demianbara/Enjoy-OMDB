@@ -17,7 +17,7 @@ export default function MvSearch() {
     const handleClick = () => {
         dispatch(moviesFound(inputVal))
     }
-    console.log('Movies Array:', moviesArray)
+ 
 
     return (
         <div className={s.mvSearch}>
