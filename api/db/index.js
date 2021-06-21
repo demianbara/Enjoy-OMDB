@@ -1,9 +1,7 @@
-"use strict";
-
 const db = require("./db");
 const chalk = require("chalk");
 
-// require("./models");
+require("./models");
 
 var syncedDbPromise = db.sync();
 

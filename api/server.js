@@ -5,12 +5,12 @@ const startDb = require('./db')
 const server = require("http").createServer();
 
 const createApp = function () {
-    let app = require('./app')
+    const app = require('./app')
     server.on('request', app)
 }
 
 const startServer = function () {
-    let PORT = 1337
+    const PORT = 3001
 
     server.listen(PORT, () => {
         console.log(chalk.magenta('Server listen on port', chalk.blue(PORT)))
