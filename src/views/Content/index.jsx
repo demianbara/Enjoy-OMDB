@@ -9,8 +9,8 @@ export default function Content () {
     return (
         <main>
             <Switch>
-                <Route exact path='/favs' component={Favorites}></Route>
-                <Route exact path='/users' component={User}></Route>
+                <Route path='/favs' component={Favorites}></Route>
+                <Route path='/users' component={User}></Route>
                 <Route path='/' component={Movie}></Route>
                 <Redirect to='/' />
             </Switch>
