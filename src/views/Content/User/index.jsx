@@ -5,8 +5,10 @@ import FormRegister from "./FormRegister";
 import FormLogin from './FormLogin';
 import Users from './users';
 import UsersUnique from './userUnique';
+import { useSelector } from 'react-redux';
 
 export default function User () {
+
     return (
         <div>
             USERS

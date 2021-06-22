@@ -16,7 +16,7 @@ export default function FormRegister () {
     }
 
     React.useEffect(() => {
-        if(userCreated) {history.push('/movies')}
+        if(userCreated) {history.push('/users/login')}
     }, [userCreated, history])
 
     return (

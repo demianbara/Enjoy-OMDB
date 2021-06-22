@@ -12,6 +12,17 @@ router.post('/add',(req,res,next) => {
         .catch(next);
 })
 
+router.delete("/remove", (req, res, next) => {
+    Favorite.findOne({
+        where: {
+            imdbID: req.query.id
+        },
+    })
+        .then((fav) => fav.destroy())
+        .then((favDestroy) => res.status(204).send(favDestroy))
+        .catch(next);
+});
+
 router.get('/get', (req,res,next) => {
     Favorite.findAll({
         where: {

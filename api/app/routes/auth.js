@@ -11,13 +11,13 @@ router.post('/register', (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
-    console.log(req.user);
     res.json(req.user);
 });
 
-router.get('/', (req,res,next) => {
-    User.findAll().then(user => { res.json(user);})
-})
+router.get("/logout", (req, res, next) => {
+    req.logout();
+    res.redirect("/");
+});
 
 
 
