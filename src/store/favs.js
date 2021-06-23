@@ -19,9 +19,9 @@ export const setFavMovie = createAsyncThunk(
 
 export const deleteFavMovie = createAsyncThunk(
     "DELETEFAVMOVIE",
-    (movieimdbID, thunkAPI) => {
+    (movie, thunkAPI) => {
         return axios
-            .delete(`api/favorite/remove?id=${movieimdbID}`)
+            .delete(`api/favorite/remove?id=${movie.imdbID}`)
             .then((res) => res.data);
     }
 );

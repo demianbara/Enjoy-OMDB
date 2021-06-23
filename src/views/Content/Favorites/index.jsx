@@ -4,6 +4,7 @@ import Card from "../../../components/Card/card";
 import s from "./style.module.css";
 import MvSearch from "../Movie/mvSearch";
 import { favMovies } from "../../../store/favs";
+import RemoveFavorite from "../../../components/Card/RemoveFav";
 
 export default function Favorites() {
     const { favorites, toggleFav } = useSelector((store) => store.favorites);
@@ -14,21 +15,17 @@ export default function Favorites() {
         dispatch(favMovies());
     }, [dispatch, toggleFav]);
 
-
     return (
-        <div className={s.movieContent}>
-            <MvSearch />
-            {!isLogin ? (
-                <h3>You need to be logged in to see your favs</h3>
-            ) : (
-                <section className={s.mvFound}>
-                    {favorites.length > 0 ? (
-                        favorites.map((fav) => <Card movie={fav} />)
-                    ) : (
-                        <h3>No Favs Added</h3>
-                    )}
-                </section>
-            )}
+        <div className="d-flex flex-wrap justify-content-center align-center">
+            {favorites.map((movie) => (
+                <div class="card m-3" style={{ width: "18rem" }}>
+                    <img src={movie.Poster} class="card-img-top" alt="..." />
+                    <div class="card-body d-flex justify-content-between">
+                        <p class="card-text">{movie.Title}</p>
+                        <RemoveFavorite movie={movie} />
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }

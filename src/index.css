@@ -1,3 +1,7 @@
+@import "~antd/dist/antd.css";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+
 * {
     box-sizing: border-box;
 }
@@ -13,7 +17,13 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #170623;
+    background-color: #000000;
+    font-weight: 100;
+}
+
+main {
+    background: linear-gradient(to right, #0e0b16 0%, #2b1194 100%);
+    min-height: 100vh;
 }
 
 code {
@@ -21,18 +31,19 @@ code {
         monospace;
 }
 
+
 .card {
     margin: 5px;
     background-color: #210934;
     border-color: #441269;
     border: round;
-    box-shadow: 0px 0px 12px 8px #331653;
+    box-shadow: 0px 0px 20px 4px #331653;
 }
 
 .card:hover {
-    border: solid 4px;
+    border: 4px;
     border-color: #441269;
-    box-shadow: 0px 0px 10px 8px white;
+    box-shadow: 0px 0px 12px 4px white;
 }
 
 .card-img-top {
@@ -47,7 +58,7 @@ code {
 }
 
 .card-text {
-  color: beige;
+  color: #bdaea0;
 }
 
 .navbar {
@@ -57,11 +68,83 @@ code {
 
 .form-control {
     background-color: #210934;
-    color: beige;
+    color: #bdaea0;
+    box-shadow: 0px 0px 10px 1px #b3adbb inset;
+    border: none;
 }
 .form-control:focus {
-    background-color: #f3f0f6;
+    background-color: #bdaea0;
     color: #210934;
     font-weight: bolder;
+    border: none;
+    box-shadow: 0px 0px 10px 2px white;
 }
 
+.btn {
+  color: #f3f0f6;
+  border-color: #f3f0f6;
+}
+
+.btn:hover {
+  background-color: #000000;
+  border: solid #bdaea0;
+}
+
+.wrap-form {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faHeart {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.faHeart:hover {
+    color: #8a00f3;
+}
+
+.form-label {
+    color: #bdaea0;
+}
+
+.movie-unique {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset, label { margin: 0; padding: 0; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+ 
+.rating > label:before { 
+  margin: 5px;
+  margin-top: 0;
+  font-size: 1em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */

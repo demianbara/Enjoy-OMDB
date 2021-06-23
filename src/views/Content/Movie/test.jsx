@@ -12,9 +12,17 @@ export default function Test() {
 
     return moviesArray.map((movie) => (
         <div class="card m-3" style={{ width: "18rem" }}>
-            <img src={movie.Poster} class="card-img-top" alt="..." />
-            <div class="card-body">
+            <Link
+                to={`/movies/${movie.imdbID}`}
+                onClick={() => {
+                    dispatch(movieUnique(movie.imdbID));
+                }}
+            >
+                <img src={movie.Poster} class="card-img-top" alt="..." />
+            </Link>
+            <div class="card-body d-flex justify-content-between">
                 <p class="card-text">{movie.Title}</p>
+                <Favorite movie={movie} />
             </div>
         </div>
     ));

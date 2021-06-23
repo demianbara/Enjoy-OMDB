@@ -1,37 +1,56 @@
-import * as React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
-import { register } from '../../../store/userAuth';
+import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import { register } from "../../../store/userAuth";
+import useForm from "../../../hooks/useForm";
 
-export default function FormRegister () {
-    const [email, setEmail] = React.useState("")
-    const [password, setPassword] = React.useState("")
-    const history = useHistory();
-    const { userCreated } = useSelector((store) => store.userAuth);
-    const dispatch = useDispatch()
-
-    const handleSubmit = (e) => {
-        dispatch(register({email, password}))
-        e.preventDefault();
-    }
-
-    React.useEffect(() => {
-        if(userCreated) {history.push('/users/login')}
-    }, [userCreated, history])
+export default function FormRegister() {
+    const { handleSubmit , handleChange } = useForm(register, "userAuth", "userCreated", "/users/login");
 
     return (
-        <div> <h2> REGISTER </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="">
-                    Email
-                    <input type="text" onChange={(e) => {setEmail(e.target.value)}}/>
+        <form onSubmit={handleSubmit} className="w-50 p-5">
+            <h2>
+                <span class="badge bg-secondary">Register</span>
+            </h2>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">
+                    Email address
                 </label>
-                <label htmlFor="">
+                <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    onChange={handleChange}
+                />
+                <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
                     Password
-                    <input type="password" onChange={(e) => {setPassword(e.target.value)}}/>
                 </label>
-                <input type="submit" value='Submit'/>
-            </form>
-        </div>
+                <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    onChange={handleChange}
+                />
+            </div>
+            <div class="mb-3 form-check">
+                <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1">
+                    Check me out
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </form>
     );
 }

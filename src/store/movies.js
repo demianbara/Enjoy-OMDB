@@ -1,4 +1,4 @@
-import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const apiKey = 'c7e9981c'
@@ -6,6 +6,7 @@ const initialState = {
     moviesArray: [],
     movieSelected: {}
 };
+
 
 export const moviesFound = createAsyncThunk(
     "MOVIESFOUND",
@@ -18,9 +19,16 @@ export const movieUnique = createAsyncThunk('MOVIEUNIQUE', (movieId, thunkAPI) =
     return axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movieId}`).then((res) => res.data)
 })
 
+export const increment = createAction('INCREMENT')
+
 const moviesReducer = createReducer(initialState, {
     [moviesFound.fulfilled]: (state, action) => {state.moviesArray = action.payload.Search ? action.payload.Search : []},
-    [movieUnique.fulfilled]: (state, action) => {state.movieSelected = action.payload}
+    [movieUnique.fulfilled]: (state, action) => {state.movieSelected = action.payload},
 });
 
 export default moviesReducer;
+
+
+
+
+

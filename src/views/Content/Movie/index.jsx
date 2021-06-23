@@ -9,7 +9,7 @@ import Test from './test'
 
 export default function Movie () {
     return (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center align-center">
             <Switch>
                 <Route exact path="/movies" component={Test}></Route>
                 <Route path="/movies/:movieId" component={MvUnique}></Route>

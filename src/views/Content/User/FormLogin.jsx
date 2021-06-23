@@ -1,51 +1,132 @@
+import { message } from "antd";
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
-import { login, register } from "../../../store/userAuth";
+import { useSelector } from "react-redux";
+import useForm from "../../../hooks/useForm";
+import { login } from "../../../store/userAuth";
 
 export default function FormLogin() {
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
-    const history = useHistory();
-    const { isLogin } = useSelector((store) => store.userAuth);
-    const dispatch = useDispatch();
-
-    const handleSubmit = (e) => {
-        dispatch(login({ email, password }));
-        e.preventDefault();
-    };
+    const { handleSubmit, handleChange } = useForm(login, 'userAuth', 'isLogin', '/movies')
+    const { userLog } = useSelector(store => store.userAuth)
+    const mounted = React.useRef()
 
     React.useEffect(() => {
-        if (isLogin) {
-            history.push("/movies");
-        }
-    }, [isLogin, history]);
+        if(!mounted.current) mounted.current = true;
+        else return () => message.success(`Welcome ${userLog.email}`);
+    }, [userLog.email]);
 
     return (
-        <div>
-            {" "}
-            <h2> LOGIN </h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="">
-                    Email
-                    <input
-                        type="text"
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                    />
+        <form onSubmit={handleSubmit} className="w-50 p-5">
+            <h2>
+                 <span class="badge bg-secondary">Login</span>
+            </h2>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">
+                    Email address
                 </label>
-                <label htmlFor="">
+                <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    onChange={handleChange}
+                />
+                <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
                     Password
-                    <input
-                        type="password"
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                        }}
-                    />
                 </label>
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
+                <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    onChange={handleChange}
+                />
+            </div>
+            <div class="mb-3 form-check">
+                <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1">
+                    Check me out
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </form>
+        // <div>
+        //     {" "}
+        //     <h2> LOGIN </h2>
+        //     <form onSubmit={handleSubmit}>
+        //         <label htmlFor="">
+        //             Email
+        //             <input
+        //                 type="text"
+        //                 onChange={(e) => {
+        //                     setEmail(e.target.value);
+        //                 }}
+        //             />
+        //         </label>
+        //         <label htmlFor="">
+        //             Password
+        //             <input
+        //                 type="password"
+        //                 onChange={(e) => {
+        //                     setPassword(e.target.value);
+        //                 }}
+        //             />
+        //         </label>
+        //         <input type="submit" value="Submit" />
+        //     </form>
+        // </div>
     );
+}
+
+{
+    /* <form onSubmit={handleSubmit}>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">
+            Email address
+        </label>
+        <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            onChange={(e) => {
+                setEmail(e.target.value);
+            }}
+        />
+        <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">
+            Password
+        </label>
+        <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            onChange={(e) => {
+                setPassword(e.target.value);
+            }}
+        />
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">
+            Check me out
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+</form>; */
 }

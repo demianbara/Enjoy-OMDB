@@ -1,26 +1,33 @@
-import * as React from 'react';
-import { useSelector } from 'react-redux';
-import s from './style.module.css'
+import * as React from "react";
+import { useSelector } from "react-redux";
+import s from "./style.module.css";
 
-export default function MvUnique () {
-    const { movieSelected } = useSelector(store => store.movies);
-    console.log(movieSelected)
+export default function MvUnique() {
+    const { movieSelected } = useSelector((store) => store.movies);
+    // const arrayGenres = movieSelected.split(",").map(x => x.trim())
+
     return (
-        <div classNameName={s.mvUnique}>
-            <h1>{movieSelected.Title}</h1>
-            <img src={movieSelected.Poster} alt="" />
-            <h4 className={s.plotMovie}>{movieSelected.Plot}</h4>
+        <div className="movie-unique">
+            <div class="card mb-3" style={{ width: "1000px" }}>
+                <div class="row g-0">
+                    <div class="col-md-4 d-flex flex-direction-column">
+                        <img
+                            src={movieSelected.Poster}
+                            class="img-fluid rounded-start p-3"
+                            alt="..."
+                        />
+                        {/* {arrayGenres.map(x => (
+                            
+                        ))} */}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{movieSelected.Title}</h5>
+                            <p class="card-text">{movieSelected.Plot}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        // <div classNameName="card cardStyle">
-        //     <img classNameName="card-img-top" src={movieSelected.Poster} alt="" />
-        //     <div classNameName="card-body">
-        //         <h5 classNameName="card-title">{movieSelected.Title}</h5>
-        //         <p classNameName="card-text">{movieSelected.Plot}</p>
-        //         <a href="#" classNameName="btn btn-primary">
-        //             Go somewhere
-        //         </a>
-        //     </div>
-        // </div>
-       
     );
 }
