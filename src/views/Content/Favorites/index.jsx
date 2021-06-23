@@ -18,18 +18,17 @@ export default function Favorites() {
     return (
         <div className={s.movieContent}>
             <MvSearch />
-            {!isLogin
-            ? <h3>You need to be loggin to see your favs
-            </h3> 
-            :
-            <section className={s.mvFound}>
-                {favorites.length > 0 ? (
-                    favorites.map((fav) => <Card movie={fav} />)
-                ) : (
-                    <h3>No Favs Added</h3>
-                )}
-            </section>
-            }
+            {!isLogin ? (
+                <h3>You need to be logged in to see your favs</h3>
+            ) : (
+                <section className={s.mvFound}>
+                    {favorites.length > 0 ? (
+                        favorites.map((fav) => <Card movie={fav} />)
+                    ) : (
+                        <h3>No Favs Added</h3>
+                    )}
+                </section>
+            )}
         </div>
     );
 }

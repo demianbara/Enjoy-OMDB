@@ -1,0 +1,41 @@
+import * as React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { moviesFound } from "../../store/movies";
+
+export default function Search() {
+    const [inputVal, setInput] = React.useState("");
+    const { moviesArray } = useSelector((store) => store.movies);
+    const dispatch = useDispatch();
+
+    const handleChange = (e) => {
+        console.log(inputVal)
+        let value = e.target.value;
+        setInput(value);
+    };
+
+    const handleClick = () => {
+        dispatch(moviesFound(inputVal));
+    };
+
+    return (
+        <form className="d-flex w-50">
+            <input
+                onChange={handleChange}
+                className="form-control me-2"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+            />
+            <Link to="/movies">
+                <button
+                    className="btn btn-outline-success"
+                    type="submit"
+                    onClick={handleClick}
+                >
+                    Search
+                </button>
+            </Link>
+        </form>
+    );
+}

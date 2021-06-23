@@ -5,13 +5,13 @@ import MvFound from './mvFound';
 import s from './style.module.css';
 import MvUnique from './mvUnique';
 import Favorites from '../Favorites';
+import Test from './test'
 
 export default function Movie () {
     return (
-        <div className={s.movieContent}>
-            <MvSearch />
+        <div className="d-flex flex-wrap justify-content-center">
             <Switch>
-                <Route exact path="/movies" component={MvFound}></Route>
+                <Route exact path="/movies" component={Test}></Route>
                 <Route path="/movies/:movieId" component={MvUnique}></Route>
                 <Redirect to="/movies" />
             </Switch>

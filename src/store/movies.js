@@ -19,7 +19,7 @@ export const movieUnique = createAsyncThunk('MOVIEUNIQUE', (movieId, thunkAPI) =
 })
 
 const moviesReducer = createReducer(initialState, {
-    [moviesFound.fulfilled]: (state, action) => {state.moviesArray = action.payload.Search ? action.payload.Search.slice(0,9) : []},
+    [moviesFound.fulfilled]: (state, action) => {state.moviesArray = action.payload.Search ? action.payload.Search : []},
     [movieUnique.fulfilled]: (state, action) => {state.movieSelected = action.payload}
 });
 

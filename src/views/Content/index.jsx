@@ -8,12 +8,13 @@ import User from './User';
 export default function Content () {
     return (
         <main>
+
             <Switch>
-                <Route path='/favs' component={Favorites}></Route>
-                <Route path='/users' component={User}></Route>
-                <Route path='/' component={Movie}></Route>
-                <Redirect to='/' />
+                <Route path="/favs" component={Favorites}></Route>
+                <Route path="/users" component={User}></Route>
+                <Route path="/" component={Movie}></Route>
+                <Redirect to="/" />
             </Switch>
         </main>
-    )
+    );
 }

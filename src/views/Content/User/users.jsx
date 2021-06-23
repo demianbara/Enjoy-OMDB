@@ -17,14 +17,18 @@ export default function Users () {
 
     return (
         <div>
-            {!isLogin ? 'You need to be loggin to see users info'
-            :
-            users.map((x) => (
-                <Link onClick={() => { dispatch(userSelect(x.id))}} to={`/users/${x.id}`}>
-                    <h2 key={x.id}>{x.email}</h2>
-                </Link>
-            ))
-            }
+            {!isLogin
+                ? "You need to be logged in to see users info"
+                : users.map((x) => (
+                      <Link
+                          onClick={() => {
+                              dispatch(userSelect(x.id));
+                          }}
+                          to={`/users/${x.id}`}
+                      >
+                          <h2 key={x.id}>{x.email}</h2>
+                      </Link>
+                  ))}
         </div>
     );
 }
