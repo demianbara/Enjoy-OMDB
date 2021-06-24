@@ -1,10 +1,8 @@
-import { message } from "antd";
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { logout } from "../../store/userAuth";
-import { userSelect } from "../../store/users";
-import s from "./style.module.css";
+import { logout, switcher } from "../../store/userAuth";
+
 
 export default function UserButton() {
     const { isLogin, userLog } = useSelector((store) => store.userAuth);
@@ -14,41 +12,41 @@ export default function UserButton() {
         <div>
             {isLogin ? (
                 <div
-                    class="btn-group"
+                    className="btn-group"
                     role="group"
                     aria-label="Button group with nested dropdown"
                 >
                     <Link to="/favs">
-                        <button type="button" class="btn btn-outline">
+                        <button type="button" className="btn btn-outline">
                             Favs
                         </button>
                     </Link>
                     <Link to="/users">
-                        <button type="button" class="btn btn-outline">
+                        <button type="button" className="btn btn-outline">
                             Users
                         </button>
                     </Link>
 
-                    <div class="btn-group" role="group">
+                    <div className="btn-group" role="group">
                         <button
                             id="btnGroupDrop1"
                             type="button"
-                            class="btn btn-outline dropdown-toggle"
+                            className="btn btn-outline dropdown-toggle"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
                             {userLog.email}
                         </button>
                         <ul
-                            class="dropdown-menu"
+                            className="dropdown-menu"
                             aria-labelledby="btnGroupDrop1"
                         >
-                            <Link to="/users/logout" class="dropdown-item">
+                            <Link to={`/users/${userLog.id}`} className="dropdown-item">
                                 <li>My Profile</li>
                             </Link>
                             <Link
                                 to="/users/logout"
-                                class="dropdown-item"
+                                className="dropdown-item"
                                 onClick={() => {
                                     dispatch(logout());
                                 }}

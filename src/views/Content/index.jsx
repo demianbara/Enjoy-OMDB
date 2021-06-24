@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 import Movie from './Movie';
-import Favorites from './Favorites'
+import Favorites from './Favorites/Favorites'
 import './style.module.css'
 import User from './User';
 import MvUnique from './Movie/mvUnique';

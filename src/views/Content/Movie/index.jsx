@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import MvUnique from './mvUnique';
 import Test from './test'
-import Footer from '../../Footer';
+import Footer from '../../Footer/Footer';
 import { useSelector } from 'react-redux';
 
 export default function Movie () {

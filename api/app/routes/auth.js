@@ -14,9 +14,18 @@ router.post("/login", passport.authenticate("local"), (req, res, next) => {
     res.json(req.user);
 });
 
+
 router.get("/logout", (req, res, next) => {
     req.logout();
     res.redirect("/");
+});
+
+router.get("/me", (req, res) => {
+    if (!req.user) {
+        return res.sendStatus(401);
+    }
+
+    res.send(req.user);
 });
 
 

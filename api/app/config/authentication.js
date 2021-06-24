@@ -4,9 +4,7 @@ const { User } = require("../../db/models");
 const LocalStrategy = require("passport-local").Strategy;
 
 module.exports = function (app) {
-    app.use(
-        session({ secret: "omdb", resave: false, saveUninitialized: true })
-    );
+    app.use(session({ secret: "omdb", resave: true, saveUninitialized: true }));
     app.use(passport.initialize());
     app.use(passport.session());
 

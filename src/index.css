@@ -104,7 +104,7 @@ code {
 }
 
 .wrap-form {
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,5 +175,24 @@ code {
     font-size: 3em;
     font-weight: 600;
     color: #E7DFDD;
+}
+
+.RiDeleteBinFill {
+    font-size: 1.5em;
+}
+
+.RiDeleteBinFill:hover {
+    font-size: 1.6em;
+    color: #5d6161ef;
+}
+
+.users-name {
+    font-size: 4em;
+    font-weight: 600;
+    color: #E7DFDD;
+}
+
+.link-userunique {
+    margin: 30px;
 }
 

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
@@ -22,10 +22,15 @@ export const logout = createAsyncThunk("LOGOUT", (body, thunkAPI) => {
     return axios.get("/api/auth/logout").then((user) => user.data);
 });
 
+export const checkUser = createAction('CHECKUSER')
+
+
 const userAuthReducer = createReducer(initialState, {
     [register.fulfilled] : (state, action) => {state.userCreated = true},
     [login.fulfilled] : (state, action) => {state.isLogin = true; state.userLog = action.payload},
-    [logout.fulfilled] : (state, action) => {state.isLogin = false; state.userLog = {}}
+    [logout.fulfilled] : (state, action) => {state.isLogin = false; state.userLog = {}},
+    [checkUser] : (state, action) => {state.isLogin = true;
+    state.userLog = action.payload;}
 })
 
 

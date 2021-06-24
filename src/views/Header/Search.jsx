@@ -18,9 +18,14 @@ export default function Search() {
         dispatch(setSearchValue(inputVal));
     };
 
+    const handleKeyDown = (e) => {
+        console.log(e.keyCode)
+    }
+
     return (
         <form className="d-flex w-50">
             <input
+                onKeyDown={handleKeyDown}
                 onChange={handleChange}
                 className="form-control me-2"
                 type="text"

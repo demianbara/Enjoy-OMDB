@@ -13,8 +13,8 @@ export default function User() {
             <Switch>
                 <Route exact path="/users/register" component={FormRegister} />
                 <Route exact path="/users/login" component={FormLogin} />
-                <Route exact path="/users/:id" component={UsersUnique} />
                 <Route exact path="/users" component={Users} />
+                <Route path="/users/:id" component={UsersUnique} />
             </Switch>
         </div>
     );
