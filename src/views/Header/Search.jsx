@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { moviesFound } from "../../store/movies";
+import { moviesFound, setSearchValue } from "../../store/movies";
 
 export default function Search() {
     const [inputVal, setInput] = React.useState("");
@@ -9,13 +9,13 @@ export default function Search() {
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
-        console.log(inputVal)
         let value = e.target.value;
         setInput(value);
     };
 
     const handleClick = () => {
-        dispatch(moviesFound(inputVal));
+        dispatch(moviesFound(inputVal))
+        dispatch(setSearchValue(inputVal));
     };
 
     return (

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { moviesFound } from '../../../store/movies';
+import { moviesFound, setSearchValue } from '../../../store/movies';
 import s from "./style.module.css";
 
 export default function MvSearch() {
@@ -16,6 +16,7 @@ export default function MvSearch() {
 
     const handleClick = () => {
         dispatch(moviesFound(inputVal))
+        dispatch(setSearchValue(inputVal))
     }
  
 

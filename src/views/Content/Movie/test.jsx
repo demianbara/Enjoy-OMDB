@@ -2,13 +2,39 @@ import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./style.module.css";
 import { Link } from "react-router-dom";
-import { movieUnique } from "../../../store/movies";
+import { moviesFound, movieUnique } from "../../../store/movies";
 import Favorite from "../../../components/Card/Fav";
 import Card from "../../../components/Card/card";
 
 export default function Test() {
-    const { moviesArray } = useSelector((store) => store.movies);
+    const { moviesArray, prevY } = useSelector((store) => store.movies);
     const dispatch = useDispatch();
+
+//     const handleObserver = (entities, observer) => {
+//     const y = entities[0].boundingClientRect.y;
+//     if (prevY > y) {
+//       const lastPhoto = moviesArray[moviesArray.length - 1];
+//       const curPage = lastPhoto.albumId;
+//       dispatch(moviesFound(curPage);
+//       setState({ page: curPage });
+//     }
+//     setState({ prevY: y });
+//   }
+
+//     React.useEffect(() => {
+//         let options = {
+//             root: null,
+//             rootMargin: "0px",
+//             threshold: 1.0,
+//         };
+//         let observer = new IntersectionObserver(
+//             handleObserver,
+//             options
+//         );
+//         observer.observe(loadingRef);
+
+//     }, [])
+
 
     return moviesArray.map((movie) => (
         <div class="card" style={{ width: "18rem" }}>
