@@ -1,5 +1,6 @@
 @import "~antd/dist/antd.css";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600&display=swap');
 
 
 * {
@@ -17,77 +18,89 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #000000;
+    background: linear-gradient(to right, #0e0b16 0%, #25107c 100%);
     font-weight: 100;
 }
 
 main {
-    background: linear-gradient(to right, #0e0b16 0%, #2b1194 100%);
     min-height: 100vh;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Raleway', sans-serif;
 }
 
 
+
 .card {
-    margin: 5px;
-    background-color: #210934;
+    margin: 30px;
+    background-color: transparent;
     border-color: #441269;
-    border: round;
-    box-shadow: 0px 0px 20px 4px #331653;
+    border-radius: 30px 30px 30px 30px;
+    border: none;
+    box-shadow: 0px 0px 30px 4px #25107c;
 }
 
 .card:hover {
     border: 4px;
     border-color: #441269;
-    box-shadow: 0px 0px 12px 4px white;
+    box-shadow: 0px 0px 30px 0.5px #E7DFDD;
 }
 
 .card-img-top {
     width: 100%;
     height: 25vw;
     object-fit: cover;
+    border-radius: 30px 30px 0px 0px;
 }
 
 
 .card-body {
-  background-color: #210934;
+  background-color: transparent;
 }
 
 .card-text {
-  color: #bdaea0;
+  color: #E7DFDD;
+  font-weight: 400;
 }
 
 .navbar {
-    background-color: #331653;
+    background-color: transparent;
     
 }
 
 .form-control {
-    background-color: #210934;
-    color: #bdaea0;
-    box-shadow: 0px 0px 10px 1px #b3adbb inset;
+    background-color: transparent;
+    color: #E7DFDD;
+    /* box-shadow: 0px 0px 10px 1px #b3adbb inset; */
+    outline: none;
     border: none;
+    border-bottom:1px solid #E7DFDD;
 }
+
 .form-control:focus {
-    background-color: #bdaea0;
-    color: #210934;
+    background: linear-gradient(to right, #0e0b16 0%, #564a88 100%);
+    color: #E7DFDD;
     font-weight: bolder;
     border: none;
-    box-shadow: 0px 0px 10px 2px white;
+    outline: none;
+    box-shadow: none;
+}
+
+.form-control:active {
+    background: linear-gradient(to right, #0e0b16 0%, #564a88 100%);
 }
 
 .btn {
-  color: #f3f0f6;
+    outline: none;
+    border: none;
+  color: #E7DFDD;
   border-color: #f3f0f6;
 }
 
 .btn:hover {
   background-color: #000000;
-  border: solid #bdaea0;
+  border: 1.5px solid white,
 }
 
 .wrap-form {
@@ -103,11 +116,11 @@ code {
 }
 
 .faHeart:hover {
-    color: #8a00f3;
+    color: #E7DFDD;
 }
 
 .form-label {
-    color: #bdaea0;
+    color: #E7DFDD;
 }
 
 .movie-unique {
@@ -117,34 +130,32 @@ code {
     align-items: center;
 }
 
-fieldset, label { margin: 0; padding: 0; }
-
-/****** Style Star Rating Widget *****/
-
-.rating { 
-  border: none;
-  float: left;
-}
- 
-.rating > label:before { 
-  margin: 5px;
-  margin-top: 0;
-  font-size: 1em;
-  font-family: FontAwesome;
-  display: inline-block;
-  content: "\f005";
+.user-auth {
+    height: 100%;
 }
 
-.rating > .half:before { 
-  content: "\f089";
-  position: absolute;
+.user-auth-title {
+    font-weight: 400;
+    color: #E7DFDD;
+    font-size: 3em;
+    font-weight: 600;
+    text-align: end;
+    margin-bottom: 1em;
 }
 
-.rating > label { 
-  color: #ddd; 
- float: right; 
+.btn-auth {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1.5em;
+    width: 100%;
 }
 
-/***** CSS Magic to Highlight Stars on Hover *****/
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.btn-auth:hover {
+    background-color: #E7DFDD;
+    border-radius: 10px;
+    font-weight: 400;
+    width: 100%;
+}
+
+

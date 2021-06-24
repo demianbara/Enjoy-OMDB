@@ -11,7 +11,7 @@ export default function Test() {
     const dispatch = useDispatch();
 
     return moviesArray.map((movie) => (
-        <div class="card m-3" style={{ width: "18rem" }}>
+        <div class="card" style={{ width: "18rem" }}>
             <Link
                 to={`/movies/${movie.imdbID}`}
                 onClick={() => {

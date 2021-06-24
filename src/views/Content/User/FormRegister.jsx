@@ -9,9 +9,7 @@ export default function FormRegister() {
 
     return (
         <form onSubmit={handleSubmit} className="w-50 p-5">
-            <h2>
-                <span class="badge bg-secondary">Register</span>
-            </h2>
+            <div className="user-auth-title">Register</div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">
                     Email address
@@ -38,17 +36,7 @@ export default function FormRegister() {
                     onChange={handleChange}
                 />
             </div>
-            <div class="mb-3 form-check">
-                <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1">
-                    Check me out
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-outline btn-auth">
                 Submit
             </button>
         </form>

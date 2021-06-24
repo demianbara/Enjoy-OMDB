@@ -5,20 +5,23 @@ import useForm from "../../../hooks/useForm";
 import { login } from "../../../store/userAuth";
 
 export default function FormLogin() {
-    const { handleSubmit, handleChange } = useForm(login, 'userAuth', 'isLogin', '/movies')
-    const { userLog } = useSelector(store => store.userAuth)
-    const mounted = React.useRef()
+    const { handleSubmit, handleChange } = useForm(
+        login,
+        "userAuth",
+        "isLogin",
+        "/movies"
+    );
+    const { userLog } = useSelector((store) => store.userAuth);
+    const mounted = React.useRef();
 
     React.useEffect(() => {
-        if(!mounted.current) mounted.current = true;
+        if (!mounted.current) mounted.current = true;
         else return () => message.success(`Welcome ${userLog.email}`);
     }, [userLog.email]);
 
     return (
         <form onSubmit={handleSubmit} className="w-50 p-5">
-            <h2>
-                 <span class="badge bg-secondary">Login</span>
-            </h2>
+            <div className="user-auth-title">Login</div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">
                     Email address
@@ -45,17 +48,7 @@ export default function FormLogin() {
                     onChange={handleChange}
                 />
             </div>
-            <div class="mb-3 form-check">
-                <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1">
-                    Check me out
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-outline btn-auth">
                 Submit
             </button>
         </form>

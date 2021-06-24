@@ -11,7 +11,7 @@ export default function Card ({movie}) {
    
     return (
         <div
-            className="card mb-3"
+            className="card"
             style={{ width: "540px", backgroundColor: "#892B64" }}
         >
             <div class="row g-0">

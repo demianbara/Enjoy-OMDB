@@ -62,7 +62,7 @@ export default function UserButton() {
                 <div>
                     <Link to="/users/login">
                         <button
-                            className="btn btn-outline me-2"
+                            className="btn btn-outline me-2 user-auth"
                             type="button"
                         >
                             Login
@@ -70,7 +70,7 @@ export default function UserButton() {
                     </Link>
                     <Link to="/users/register">
                         <button
-                            className="btn btn-sm btn-outline-secondary"
+                            className="btn btn-outline-secondary user-auth"
                             type="button"
                         >
                             Register

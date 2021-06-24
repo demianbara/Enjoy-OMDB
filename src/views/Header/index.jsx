@@ -16,7 +16,7 @@ export default function Header() {
         <header>
             <nav className="navbar navbar-light p-3 shadow">
                 <div className="container-fluid">
-                    <Link className="navbar-brand text-light" to="/">
+                    <Link className="navbar-brand text-light" to="/movies">
                         Home
                     </Link>
                     <Search />
