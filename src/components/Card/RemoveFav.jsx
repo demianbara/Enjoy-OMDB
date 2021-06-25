@@ -1,12 +1,10 @@
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { deleteFavMovie } from "../../store/favs";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { message, Tooltip } from "antd";
 
 export default function RemoveFavorite({ movie }) {
-    const { isLogin } = useSelector((store) => store.userAuth);
     const dispatch = useDispatch();
 
     const handleClick = () => {

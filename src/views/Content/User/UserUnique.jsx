@@ -1,26 +1,28 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUsers } from "../../../store/users";
 import { Link } from "react-router-dom";
 import { movieUnique } from "../../../store/movies";
 
-export default function UsersUnique() {
-    const { userSelect } = useSelector((store) => store.users);
+export default function UserUnique() {
+    const { userSelect, loading } = useSelector((store) => store.users);
     const { isLogin } = useSelector((store) => store.userAuth);
     const dispatch = useDispatch();
 
-
     return (
         <div>
-            {!isLogin ? (
-                ""
-            ) : (
+            {isLogin && !loading ? (
                 <div>
-                    <div className='users-name'>{userSelect.email}</div>
+                    <div className="users-name">
+                        {userSelect.email.split("@")[0]}'s Favorites
+                    </div>
                     <div className="d-flex flex-wrap justify-content-center align-center">
                         {userSelect.favoritos &&
                             userSelect.favoritos.map((movie) => (
-                                <div class="card" style={{ width: "18rem" }}>
+                                <div
+                                    key={movie.imdbID}
+                                    className="card"
+                                    style={{ width: "18rem" }}
+                                >
                                     <Link
                                         to={`/movies/${movie.imdbID}`}
                                         onClick={() => {
@@ -29,19 +31,22 @@ export default function UsersUnique() {
                                     >
                                         <img
                                             src={movie.Poster}
-                                            class="card-img-top"
+                                            className="card-img-top"
                                             alt="..."
                                         />
                                     </Link>
-                                    <div class="card-body d-flex justify-content-between">
-                                        <p class="card-text">{movie.Title}</p>
+                                    <div className="card-body d-flex justify-content-between">
+                                        <p className="card-text">
+                                            {movie.Title}
+                                        </p>
                                     </div>
                                 </div>
                             ))}
                     </div>
                 </div>
+            ) : (
+                ""
             )}
-            ;
         </div>
     );
 }

@@ -11,9 +11,8 @@ export default function Content () {
         <main>
             <Switch>
                 <Route exact path="/favs" component={Favorites}></Route>
-                <Route path="/movies" component={MvFound}></Route>
+                <Route exact path="/movies" component={MvFound}></Route>
                 <Route
-                    exact
                     path="/movies/:movieId"
                     component={MvUnique}
                 ></Route>

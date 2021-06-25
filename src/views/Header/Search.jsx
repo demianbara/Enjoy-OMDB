@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useDispatch} from "react-redux";
 import { moviesFound, setSearchValue } from "../../store/movies";
 import { BsSearch } from 'react-icons/bs'
 
@@ -25,7 +25,7 @@ export default function Search() {
     }
 
     return (
-        <form className="d-flex w-50">
+        <form className="d-flex w-50 ml-5">
                 <input
                     onKeyDown={handleKeyDown}
                     onChange={handleChange}

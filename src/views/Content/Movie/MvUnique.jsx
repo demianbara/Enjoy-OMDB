@@ -8,27 +8,27 @@ export default function MvUnique() {
     return (
         <div className="d-flex flex-wrap justify-content-center align-center">
             <div className="movie-unique">
-                <div class="card-unique mb-3" style={{ width: "1000px" }}>
-                    <div class="d-flex">
-                        <div class="col-md-4 d-flex flex-column">
+                <div className="card-unique mb-3" style={{ width: "1000px" }}>
+                    <div className="d-flex">
+                        <div className="col-md-4 d-flex flex-column">
                             <img
                                 src={movieSelected.Poster}
-                                class="img-movie-unique"
+                                className="img-movie-unique"
                                 alt="..."
                             />
                             <div className="d-flex flex-wrap">
                                 {arrayGenres.map((genre) => (
-                                    <div className="genre-unique">{genre}</div>
+                                    <div key={genre} className="genre-unique">{genre}</div>
                                 ))}
                             </div>
                         </div>
-                        <div class="col-md-8 d-flex">
-                            <div class="card-body d-flex flex-column">
+                        <div className="col-md-8 d-flex">
+                            <div className="card-body d-flex flex-column">
                                 <div>
-                                    <h5 class="card-title">
+                                    <h5 className="card-title">
                                         {movieSelected.Title}
                                     </h5>
-                                    <p class="card-text">
+                                    <p className="card-text">
                                         {movieSelected.Plot}
                                     </p>
                                 </div>

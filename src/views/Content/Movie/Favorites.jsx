@@ -7,17 +7,16 @@ import RemoveFavorite from "../../../components/Card/RemoveFav";
 
 export default function Favorites() {
     const { favorites, toggleFav } = useSelector((store) => store.favorites);
-    const { isLogin } = useSelector((store) => store.userAuth);
     const dispatch = useDispatch();
 
     React.useEffect(() => {
         dispatch(favMovies());
-    },);
+    }, [dispatch, toggleFav]);
 
     return (
         <div className="d-flex flex-wrap justify-content-center align-center">
             {favorites.map((movie) => (
-                <div class="card" style={{ width: "18rem" }}>
+                <div key={movie.imdbID} className="card" style={{ width: "18rem" }}>
                     <Link
                         to={`/movies/${movie.imdbID}`}
                         onClick={() => {
@@ -26,12 +25,12 @@ export default function Favorites() {
                     >
                         <img
                             src={movie.Poster}
-                            class="card-img-top"
+                            className="card-img-top"
                             alt="..."
                         />
                     </Link>
-                    <div class="card-body d-flex justify-content-between">
-                        <p class="card-text">{movie.Title}</p>
+                    <div className="card-body d-flex justify-content-between">
+                        <p className="card-text">{movie.Title}</p>
                         <RemoveFavorite movie={movie} />
                     </div>
                 </div>

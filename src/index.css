@@ -106,7 +106,8 @@ code {
 }
 
 .btn:hover {
-    box-shadow: 0px 0px 10px 1px #b3adbb inset;
+    background-color: #e7dfdd;
+    font-weight: 400;
     color: black;
 }
 

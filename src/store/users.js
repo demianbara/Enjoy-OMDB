@@ -1,10 +1,10 @@
-import { createAction, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
-import userAuthReducer from "./userAuth";
 
 const initialState = {
     users: [],
-    userSelect: {}
+    userSelect: {},
+    loading: false
 };
 
 
@@ -21,8 +21,10 @@ const usersReducer = createReducer(initialState, {
     [setUsers.fulfilled]: (state, action) => {
         state.users = action.payload;
     },
+    [userSelect.pending]: (state, action) => {state.loading = true},
     [userSelect.fulfilled]: (state, action) => {
         state.userSelect = action.payload;
+        state.loading  = false;
     },
 });
 

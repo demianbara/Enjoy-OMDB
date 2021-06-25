@@ -1,11 +1,12 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUsers, userSelect } from "../../../store/users";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 export default function Users() {
     const { users } = useSelector((store) => store.users);
     const { isLogin } = useSelector((store) => store.userAuth);
+    const history = useHistory()
     const dispatch = useDispatch();
 
     React.useEffect(() => {
@@ -18,9 +19,10 @@ export default function Users() {
                 ? ""
                 : users.map((x) => (
                       <Link
+                          key={x.id}
                           className='link-userunique'
                           onClick={() => {
-                              dispatch(userSelect(x.id));
+                              dispatch(userSelect(x.id))
                           }}
                           to={`/users/${x.id}`}
                       >

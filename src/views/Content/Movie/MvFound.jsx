@@ -13,7 +13,7 @@ export default function MvFound() {
         <div>
             <div className="d-flex flex-wrap justify-content-center align-center">
                 {moviesArray.map((movie) => (
-                    <div class="card" style={{ width: "18rem" }}>
+                    <div key={movie.imdbID} className="card" style={{ width: "18rem" }}>
                         <Link
                             to={`/movies/${movie.imdbID}`}
                             onClick={() => {
@@ -22,12 +22,12 @@ export default function MvFound() {
                         >
                             <img
                                 src={movie.Poster}
-                                class="card-img-top"
+                                className="card-img-top"
                                 alt="..."
                             />
                         </Link>
-                        <div class="card-body d-flex justify-content-between">
-                            <p class="card-text">{movie.Title}</p>
+                        <div className="card-body d-flex justify-content-between">
+                            <p className="card-text">{movie.Title}</p>
                             <Favorite movie={movie} />
                         </div>
                     </div>
