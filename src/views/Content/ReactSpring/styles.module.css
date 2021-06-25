@@ -1,0 +1,22 @@
+.svg {
+  width: 350px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  justify-content: center;
+}
+
+/* .main {
+  display: flex;
+  align-items: center;
+}
+
+.main.fill {
+    height: 100%;
+}
+
+.main.center {
+    justify-content: center; */

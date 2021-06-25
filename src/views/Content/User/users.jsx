@@ -15,7 +15,7 @@ export default function Users() {
     return (
         <div>
             {!isLogin
-                ? "You need to be logged in to see users info"
+                ? ""
                 : users.map((x) => (
                       <Link
                           className='link-userunique'

@@ -1,10 +1,11 @@
 @import "~antd/dist/antd.css";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
 
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 #root {
@@ -27,10 +28,8 @@ main {
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Raleway', sans-serif;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Raleway", sans-serif;
 }
-
-
 
 .card {
     margin: 30px;
@@ -44,7 +43,7 @@ code {
 .card:hover {
     border: 4px;
     border-color: #441269;
-    box-shadow: 0px 0px 30px 0.5px #E7DFDD;
+    box-shadow: 0px 0px 30px 0.5px #e7dfdd;
 }
 
 .card-img-top {
@@ -54,53 +53,61 @@ code {
     border-radius: 30px 30px 0px 0px;
 }
 
-
 .card-body {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .card-text {
-  color: #E7DFDD;
-  font-weight: 400;
+    color: #e7dfdd;
+    font-weight: 400;
 }
 
 .navbar {
     background-color: transparent;
-    
 }
 
 .form-control {
     background-color: transparent;
-    color: #E7DFDD;
+    color: #e7dfdd;
     /* box-shadow: 0px 0px 10px 1px #b3adbb inset; */
     outline: none;
     border: none;
-    border-bottom:1px solid #E7DFDD;
+    border-bottom: 1px solid #e7dfdd;
+    font-family: inherit;
 }
 
 .form-control:focus {
-    background: linear-gradient(to right, #0e0b16 0%, #564a88 100%);
-    color: #E7DFDD;
+    background: linear-gradient(to left, #140f20 0%, #190d4b 100%);
+    background-color: transparent;
+    color: #e7dfdd;
     font-weight: bolder;
     border: none;
     outline: none;
     box-shadow: none;
 }
 
-.form-control:active {
-    background: linear-gradient(to right, #0e0b16 0%, #564a88 100%);
+.search-movies {
+    text-align: center;
+}
+
+.search-movies:focus {
+    text-align: center;
+}
+
+.search-movies::placeholder {
+    text-align: center;
 }
 
 .btn {
     outline: none;
     border: none;
-  color: #E7DFDD;
-  border-color: #f3f0f6;
+    color: #e7dfdd;
+    border-color: #f3f0f6;
 }
 
 .btn:hover {
-  background-color: #000000;
-  border: 1.5px solid white,
+    box-shadow: 0px 0px 10px 1px #b3adbb inset;
+    color: black;
 }
 
 .wrap-form {
@@ -116,11 +123,11 @@ code {
 }
 
 .faHeart:hover {
-    color: #E7DFDD;
+    color: #e7dfdd;
 }
 
 .form-label {
-    color: #E7DFDD;
+    color: #e7dfdd;
 }
 
 .movie-unique {
@@ -130,13 +137,10 @@ code {
     align-items: center;
 }
 
-.user-auth {
-    height: 100%;
-}
 
 .user-auth-title {
     font-weight: 400;
-    color: #E7DFDD;
+    color: #e7dfdd;
     font-size: 3em;
     font-weight: 600;
     text-align: end;
@@ -151,9 +155,8 @@ code {
     width: 100%;
 }
 
-
 .btn-auth:hover {
-    background-color: #E7DFDD;
+    background-color: #e7dfdd;
     font-weight: 400;
 }
 
@@ -168,13 +171,13 @@ code {
 }
 
 .btn-footer:hover {
-   background: linear-gradient(to left, #140f20 0%, #190d4b 100%);
+    background: linear-gradient(to left, #140f20 0%, #190d4b 100%);
 }
 
 .BsChevronDoubleDown {
     font-size: 3em;
     font-weight: 600;
-    color: #E7DFDD;
+    color: #e7dfdd;
 }
 
 .RiDeleteBinFill {
@@ -189,10 +192,58 @@ code {
 .users-name {
     font-size: 4em;
     font-weight: 600;
-    color: #E7DFDD;
+    color: #e7dfdd;
 }
 
 .link-userunique {
     margin: 30px;
 }
 
+.BsSearch {
+    position: relative;
+    right: 2em;
+    top: 0.2em;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #e7dfdd;
+}
+
+.card-unique {
+    /* background: linear-gradient(to right, #0d0d0c 50%, transparent 100%); */
+    box-shadow: 0px 0px 150px -45px rgb(255 51 0 / 50%);
+    border-radius: 20px;
+}
+
+.card-unique:hover {
+    transform: scale(1.02);
+    transition: all 0.4s;
+}
+
+.img-movie-unique {
+    margin: 1em;
+    border-radius: 23px 138px 19px 18px;
+    -webkit-border-radius: 23px 138px 19px 18px;
+    -moz-border-radius: 23px 138px 19px 18px;
+    border: 16px none #5e5d5d;
+}
+
+.genre-unique {
+    color: #e7dfdd;
+    padding: 4px;
+    margin: 20px;
+    border-radius: 83px 83px 83px 83px;
+    -webkit-border-radius: 83px 83px 83px 83px;
+    -moz-border-radius: 83px 83px 83px 83px;
+    border: 2px inset #a580b4;
+}
+
+.card-title {
+    color: #e7dfdd;
+    font-weight: 600;
+    position: relative;
+    right: 3em;
+    margin-bottom: 2em;
+}
+
+
+ 

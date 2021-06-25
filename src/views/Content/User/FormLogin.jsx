@@ -9,15 +9,8 @@ export default function FormLogin() {
         login,
         "userAuth",
         "isLogin",
-        "/movies"
+        "/"
     );
-    const { userLog } = useSelector((store) => store.userAuth);
-    const mounted = React.useRef();
-
-    React.useEffect(() => {
-        if (!mounted.current) mounted.current = true;
-        else return () => message.success(`Welcome ${userLog.email}`);
-    }, [userLog.email]);
 
     return (
         <form onSubmit={handleSubmit} className="w-50 p-5">

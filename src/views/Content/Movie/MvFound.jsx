@@ -1,23 +1,18 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { favMovies } from "../../../store/favs";
-import RemoveFavorite from "../../../components/Card/RemoveFav";
 import { Link } from "react-router-dom";
 import { movieUnique } from "../../../store/movies";
+import Favorite from "../../../components/Card/Fav";
+import Footer from "../../../components/Footer";
 
-export default function Favorites() {
-    const { favorites, toggleFav } = useSelector((store) => store.favorites);
-    const { isLogin } = useSelector((store) => store.userAuth);
+export default function MvFound() {
+    const { moviesArray } = useSelector((store) => store.movies);
     const dispatch = useDispatch();
-
-    React.useEffect(() => {
-        dispatch(favMovies());
-    }, [dispatch, toggleFav]);
 
     return (
         <div>
             <div className="d-flex flex-wrap justify-content-center align-center">
-                {favorites.map((movie) => (
+                {moviesArray.map((movie) => (
                     <div class="card" style={{ width: "18rem" }}>
                         <Link
                             to={`/movies/${movie.imdbID}`}
@@ -33,11 +28,18 @@ export default function Favorites() {
                         </Link>
                         <div class="card-body d-flex justify-content-between">
                             <p class="card-text">{movie.Title}</p>
-                            <RemoveFavorite movie={movie} />
+                            <Favorite movie={movie} />
                         </div>
                     </div>
                 ))}
             </div>
+            {moviesArray.length > 0 ?
+            <div className="d-flex justify-content-center">
+                <Footer />
+            </div>    
+            : ""}
+      
         </div>
     );
 }
+

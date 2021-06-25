@@ -28,7 +28,7 @@ export const movieUnique = createAsyncThunk('MOVIEUNIQUE', (movieId, thunkAPI) =
 export const setSearchValue = createAction('SETSEARCHVALUE')
 
 const moviesReducer = createReducer(initialState, {
-     [setSearchValue] : (state, action) => {state.search = action.payload},
+     [setSearchValue] : (state, action) => {state.search = action.payload; state.moviesArray = []; state.page = 1},
     [moviesFound.fulfilled]: (state, action) => {
         if(!action.payload.Search) action.payload.Search = []
         else state.page ++

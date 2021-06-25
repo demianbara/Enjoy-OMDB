@@ -1,11 +1,13 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { moviesFound, setSearchValue } from "../../store/movies";
+import { BsSearch } from 'react-icons/bs'
+
 
 export default function Search() {
     const [inputVal, setInput] = React.useState("");
-    const { moviesArray } = useSelector((store) => store.movies);
+    const history = useHistory()
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
@@ -13,34 +15,30 @@ export default function Search() {
         setInput(value);
     };
 
-    const handleClick = () => {
-        dispatch(moviesFound(inputVal))
-        dispatch(setSearchValue(inputVal));
-    };
-
     const handleKeyDown = (e) => {
-        console.log(e.keyCode)
+        if(e.keyCode === 13) {
+            dispatch(setSearchValue(inputVal));
+            dispatch(moviesFound(inputVal));
+            e.preventDefault();
+            history.push('/movies')
+        }
     }
 
     return (
         <form className="d-flex w-50">
-            <input
-                onKeyDown={handleKeyDown}
-                onChange={handleChange}
-                className="form-control me-2"
-                type="text"
-                placeholder="Search"
-                aria-label="Search"
-            />
-            <Link to="/movies">
-                <button
-                    className="btn btn-outline-success"
-                    type="submit"
-                    onClick={handleClick}
-                >
-                    Search
-                </button>
-            </Link>
+                <input
+                    onKeyDown={handleKeyDown}
+                    onChange={handleChange}
+                    className="form-control search-movies"
+                    type="text"
+                    placeholder="Search Here"
+                    aria-label="Search"
+                />
+                <BsSearch
+                    className="BsSearch"
+                    style={{ cursor: "pointer" }}
+                />
         </form>
     );
 }
+

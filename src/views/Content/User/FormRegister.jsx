@@ -1,8 +1,8 @@
 import * as React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import { register } from "../../../store/userAuth";
 import useForm from "../../../hooks/useForm";
+import axios from "axios";
 
 export default function FormRegister() {
     const { handleSubmit , handleChange } = useForm(register, "userAuth", "userCreated", "/users/login");
@@ -36,6 +36,15 @@ export default function FormRegister() {
                     onChange={handleChange}
                 />
             </div>
+            {/* <button
+                onClick={() => {
+                    axios.get("/api/auth/facebook").then((user) => {
+                        console.log(user);
+                    });
+                }}
+            >
+                Login with Facebook
+            </button> */}
             <button type="submit" class="btn btn-outline btn-auth">
                 Submit
             </button>

@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { message } from 'antd';
 import { checkUser } from '../../store/userAuth';
+import { favMovies } from '../../store/favs';
 
 export default function App () {
     const dispatch = useDispatch()

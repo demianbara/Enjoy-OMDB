@@ -7,10 +7,14 @@ import { useHistory } from "react-router";
 export default function useForm(storeReducer, storeState, specificState, path) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error , setError] = useState(false)
+
     const stateResult  = useSelector((store) => store[storeState]);
     const state = stateResult[specificState]
     const history = useHistory();
     const dispatch = useDispatch();
+
+    const emailValidation = (val) => val.split('@').length > 1;
 
     const handleSubmit = (e) => {
         dispatch(storeReducer({email, password}))
@@ -23,6 +27,14 @@ export default function useForm(storeReducer, storeState, specificState, path) {
         if (type === 'password') setPassword(value);
     }
 
+    const onBlur = () => {
+        setError(!emailValidation(email));
+    }
+
+     const onFocus = () => {
+         setError(false);
+     };
+
     useEffect(() => {
         if (state) {
             history.push(path);
@@ -30,6 +42,7 @@ export default function useForm(storeReducer, storeState, specificState, path) {
     }, [state, history, path]);
 
 
-    return { handleSubmit, handleChange };
+
+    return { handleSubmit, handleChange, onBlur, onFocus, error };
 
 }

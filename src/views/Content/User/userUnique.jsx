@@ -13,7 +13,7 @@ export default function UsersUnique() {
     return (
         <div>
             {!isLogin ? (
-                "You need to be loggin to see users info"
+                ""
             ) : (
                 <div>
                     <div className='users-name'>{userSelect.email}</div>
