@@ -124,7 +124,7 @@ code {
 }
 
 .faHeart:hover {
-    color: #e7dfdd;
+    color: #6822c3;
 }
 
 .form-label {
@@ -211,7 +211,7 @@ code {
 
 .card-unique {
     /* background: linear-gradient(to right, #0d0d0c 50%, transparent 100%); */
-    box-shadow: 0px 0px 150px -45px rgb(255 51 0 / 50%);
+    box-shadow: 0px 0px 150px -45px #4CC9F0;
     border-radius: 20px;
 }
 
@@ -235,7 +235,7 @@ code {
     border-radius: 83px 83px 83px 83px;
     -webkit-border-radius: 83px 83px 83px 83px;
     -moz-border-radius: 83px 83px 83px 83px;
-    border: 2px inset #a580b4;
+    border: 2px inset #4CC9F0;
 }
 
 .card-title {
@@ -244,6 +244,13 @@ code {
     position: relative;
     right: 3em;
     margin-bottom: 2em;
+}
+
+.no-favs {
+    margin-top: 8em;
+    font-size: 3em;
+    font-weight: 600;
+    color: #e7dfdd;
 }
 
 

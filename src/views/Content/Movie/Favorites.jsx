@@ -15,26 +15,34 @@ export default function Favorites() {
 
     return (
         <div className="d-flex flex-wrap justify-content-center align-center">
-            {favorites.map((movie) => (
-                <div key={movie.imdbID} className="card" style={{ width: "18rem" }}>
-                    <Link
-                        to={`/movies/${movie.imdbID}`}
-                        onClick={() => {
-                            dispatch(movieUnique(movie.imdbID));
-                        }}
+            {favorites.length === 0 ? (
+                <div className="no-favs">No favorites added</div>
+            ) : (
+                favorites.map((movie) => (
+                    <div
+                        key={movie.imdbID}
+                        className="card"
+                        style={{ width: "18rem" }}
                     >
-                        <img
-                            src={movie.Poster}
-                            className="card-img-top"
-                            alt="..."
-                        />
-                    </Link>
-                    <div className="card-body d-flex justify-content-between">
-                        <p className="card-text">{movie.Title}</p>
-                        <RemoveFavorite movie={movie} />
+                        <Link
+                            to={`/movies/${movie.imdbID}`}
+                            onClick={() => {
+                                dispatch(movieUnique(movie.imdbID));
+                            }}
+                        >
+                            <img
+                                src={movie.Poster}
+                                className="card-img-top"
+                                alt="..."
+                            />
+                        </Link>
+                        <div className="card-body d-flex justify-content-between">
+                            <p className="card-text">{movie.Title}</p>
+                            <RemoveFavorite movie={movie} />
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))
+            )}
         </div>
     );
 }
