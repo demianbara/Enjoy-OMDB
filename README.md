@@ -1,4 +1,4 @@
-![logop5](https://ibb.co/QbgvLhT][img]https://i.ibb.co/vwF4pfT/Screenshot-from-2021-07-16-23-07-22.png)
+![logop5](https://i.ibb.co/SsjwbHM/Screenshot-from-2021-07-16-23-07-22.png)
 
 # OMDB
 
