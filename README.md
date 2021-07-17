@@ -1,4 +1,4 @@
-![logop5](https://i.ibb.co/SsjwbHM/Screenshot-from-2021-07-16-23-07-22.png)
+![screen1](https://i.ibb.co/SsjwbHM/Screenshot-from-2021-07-16-23-07-22.png)
 
 # OMDB
 
@@ -14,4 +14,4 @@
 3. Check running scripts in package.json
 4. "npm start" to run front and back concurrently 
 
-
+![screen2](https://i.ibb.co/McZhwzn/Screenshot-from-2021-07-16-23-43-55.png)
