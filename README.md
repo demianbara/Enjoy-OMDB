@@ -1,5 +1,5 @@
 ![screen1](https://i.ibb.co/SsjwbHM/Screenshot-from-2021-07-16-23-07-22.png)
-![screen2](https://i.ibb.co/McZhwzn/Screenshot-from-2021-07-16-23-43-55.png)
+![screen2](https://i.ibb.co/n760dXr/Screenshot-from-2021-07-16-23-43-55.png)
 
 # Enjoy-OMDB
 
