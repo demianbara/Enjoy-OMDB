@@ -3,7 +3,7 @@ const chalk = require('chalk')
 
 console.log(chalk.yellow("\nOpening connection to PostgreSQL"));
 
-const db = new Sequelize("postgres://demian:routes@localhost:5432/omdb", {
+const db = new Sequelize("postgres://postgres@localhost:5432/omdb", {
     logging: false,
 });
 
