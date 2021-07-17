@@ -10,9 +10,9 @@
 
 ### Installation:
 
-1. Create a database named omdb with the command createdb
-2. "npm install"
+1. Create a database: `createdb omdb` (the database needs to be called **omdb**)
+2. `npm install`
 3. Check running scripts in package.json
-4. "npm start" to run front and back concurrently 
+4. `npm start` to run front and back concurrently 
 
 
